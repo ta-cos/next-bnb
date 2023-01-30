@@ -8,7 +8,7 @@
     "start": "next start"
   },
   "keywords": [],
-  "author": "",
+  "author": "Nathan Treadaway",
   "license": "MIT",
   "dependencies": {
     "next": "12.0.10",
