@@ -1,7 +1,7 @@
 {
-  "name": "hello-next",
-  "version": "1.0.0",
-  "description": "",
+  "name": "next-bnb",
+  "version": "0.0.0",
+  "description": "airbnb clone using nextjs",
   "scripts": {
     "dev": "next",
     "build": "next build",
