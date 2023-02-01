@@ -31,7 +31,6 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 
-
 type Props = {
   serilaizedSpots: SpotProps[]
 }

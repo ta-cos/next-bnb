@@ -53,6 +53,12 @@ const Spot: React.FC<{ spot: SpotProps }> = ({ spot }) => {
     }
   }
 
+  const handleReserve = (e) => {
+    e.stopPropagation()
+    Router.push("/spots/bookings?[id]", `/spots/bookings?${spot.id}`)
+
+  }
+
   const ownerName = spot.owner.firstName + ' ' + spot.owner.lastName;
   const avgRating: number = getAvg(spot.reviews)
 
@@ -74,18 +80,25 @@ const Spot: React.FC<{ spot: SpotProps }> = ({ spot }) => {
         spot.reviews.length > 0 ?
           spot.reviews.map(review =>
             <>
-              <p>{review.stars} {review.text}</p>
+              <p>{review.stars > 0 ? review.stars : null} {review.text}</p>
             </>
           )
           : <button>Be the first to review</button>
       }
       {
-        spot.reviews.length && <button>Leave your review</button>
+        spot.reviews.length > 0 && <button>Leave your review</button>
       }
+      <button
+        onClick={(e) => handleReserve(e)}
+      >Reserve This Spot</button>
       <style jsx>{`
         div {
           color: inherit;
           padding: 2rem;
+        }
+
+        button {
+          z-index: 99;
         }
       `}</style>
     </div >
